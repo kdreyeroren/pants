@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Products</h1>
+<h1>Jeans for All of Us</h1>
 
 <table class="table">
   <thead>
@@ -15,10 +15,11 @@
     <% @products.each do |product| %>
       <tr>
         <td><%= product.name %></td>
-        <td><%= product.price %></td>
+        <td><%= number_to_currency(product.price) %></td>
         <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td> <!-- get rid of this --> 
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td> <!-- and this --> 
+        <td><%= "photo will go here" %></td>
+        <!-- <td><%= link_to 'Edit', edit_product_path(product) %></td> --> <!-- get rid of this --> 
+        <!-- <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td> --> <!-- and this --> 
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New Product', new_product_path %> <!-- and this --> 
+<!-- <%= link_to 'New Product', new_product_path %> --> <!-- and this --> <!-- also fix the routes -->

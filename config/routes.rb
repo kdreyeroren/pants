@@ -2,13 +2,20 @@ Rails.application.routes.draw do
   devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  resources :products # delete this so not everyone can add products
+  resources :products # delete this so not everyone can add products - this should be a 404 page for randos
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'products#index'
+
+  #get '/user_products', to: 'user_products#index', as 'user_products'
+
+  resources :user_products do
+    get 'index', to: 'user_products#index'
+  end
+
 
 
   # Example of regular route:
