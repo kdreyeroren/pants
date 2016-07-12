@@ -17,7 +17,7 @@
         <td><%= product.name %></td>
         <td><%= number_to_currency(product.price) %></td>
         <td><%= link_to 'Show', product %></td>
-        <td><%= "photo will go here" %></td>
+        <td><%= image_tag(product.photo.thumb.url) %></td>
         <!-- <td><%= link_to 'Edit', edit_product_path(product) %></td> --> <!-- get rid of this --> 
         <!-- <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td> --> <!-- and this --> 
       </tr>
