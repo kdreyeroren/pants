@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+
+<div>
 <p>
   <%= image_tag(@product.photo.thumb.url) %>
 </p>
@@ -16,3 +18,6 @@
 
 
 <%= link_to 'Buy', products_path, class: "btn btn-primary" %>
+
+<%= link_to 'Save', products_path, class: "btn btn-primary" %>
+</div> 

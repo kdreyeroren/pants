@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'products#index'
 
-  #get '/user_products', to: 'user_products#index', as 'user_products'
+  # get '/user_products', to: 'user_products#index', as 'user_products'
 
   resources :user_products do
     get 'index', to: 'user_products#index'
