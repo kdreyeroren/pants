@@ -12,6 +12,9 @@ Rails.application.routes.draw do
 
   # get '/user_products', to: 'user_products#index', as 'user_products'
 
+  post 'add_to_cart', to: 'carts#add'
+    
+
   resources :user_products do
     get 'index', to: 'user_products#index'
   end
