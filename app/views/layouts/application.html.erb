@@ -55,15 +55,10 @@
             <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
             <span class="caret"></span>
           </a>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu" id="cart_items">
 
-            <% cart_items.each do |cart_item| %>
-              <li><a href="#"><%= cart_item %></a></li>
-            <% end %>
+            <%= render "shared/cart_items" %>
 
-
-            <li role="separator" class="divider"></li>
-            <li class="active"><a href="#">Checkout</a></li>
           </ul>
         </li>
       </ul>

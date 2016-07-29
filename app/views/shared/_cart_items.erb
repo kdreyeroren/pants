@@ -1,0 +1,6 @@
+<% cart_items.each do |product| %>
+  <li><%= link_to product.name, product_path(product) %></li>
+<% end %>
+
+<li role="separator" class="divider"></li>
+<li class="active"><a href="#">Checkout</a></li>

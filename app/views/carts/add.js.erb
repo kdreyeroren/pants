@@ -1,5 +1,6 @@
-console.log("hello from javascript")
 $("#cart_count").html(<%= cart_count %>)
+
+$("#cart_items").html(<%= raw render("shared/cart_items").to_json %>)
 
 // GOALS:
 // auto update cart list without refreshing

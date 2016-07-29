@@ -1,13 +1,13 @@
 module CartsHelper
 
   def cart_count
-    cookies[:cart_count].to_i #cart_count doesn't have to be the name! just a key.
+    cart_items.size
   end
 
   def cart_items
     items = []
     JSON.parse(cookies[:cart_items] || "[]").each do |product_id|
-      items << product_id
+      items << Product.find(product_id)
     end
     return items
   end
