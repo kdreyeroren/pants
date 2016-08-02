@@ -19,6 +19,9 @@ Rails.application.routes.draw do
     get 'index', to: 'user_products#index'
   end
 
+  resources :charges do
+    get 'new', to: 'charges#new'
+  end
 
 
   # Example of regular route:
