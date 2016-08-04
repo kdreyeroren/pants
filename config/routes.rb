@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+
   devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -14,6 +16,8 @@ Rails.application.routes.draw do
 
   post 'add_to_cart', to: 'carts#add'
     
+
+  get 'checkout', to: 'checkouts#new'
 
   resources :user_products do
     get 'index', to: 'user_products#index'

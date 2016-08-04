@@ -1,9 +1,3 @@
 $("#cart_count").html(<%= cart_count %>)
 
 $("#cart_items").html(<%= raw render("shared/cart_items").to_json %>)
-
-// GOALS:
-// auto update cart list without refreshing
-// turn dropdown menu into a partial
-// give surrounding html element an id like cart_count
-// replace html of that id with the contents of the partial 
