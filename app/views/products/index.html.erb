@@ -29,7 +29,12 @@
                 <strong class="lead"><%= number_to_currency product.price %></strong>
               </div>
               <div class="col-xs-6 text-right">
-                <%= link_to "More info", product, class: "btn btn-primary" %>
+                <div class="btn-group">
+                  <%= link_to "More info", product, class: "btn btn-primary" %>
+                  <%= link_to add_to_cart_path(product_id: product.id), method: "post", remote: true, class: "btn btn-primary" do %>
+                    <span class="glyphicon glyphicon-shopping-cart"></span>
+                  <% end %>
+                </div>
               </div>
             </div>
           </div> <!-- panel-footer -->
