@@ -4,8 +4,13 @@ class ChargesController < ApplicationController
   end
 
   def create
+    
+    product_ids = JSON.parse(cookies[:cart_items] || "[]")
+    @order_items = product_ids.map { |i| OrderItem.new(product_id: i, quantity: 1) }
+    @order = Order.new(order_items: @order_items)
+
     # Amount in cents
-    @amount = 500
+    @amount = (@order.total * 100).to_i
 
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
