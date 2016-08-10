@@ -1,56 +1,80 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Pants</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
 
-<!-- menu bar -->
+  <head>
+    <title>Pants</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
 
-<nav class="navbar navbar-default">
-  <div class="container">
-    
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">Pants!</a>
-    </div>
+  <body>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      
-      
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            <span class="badge" id="cart_count"><%= cart_count %></span>
-            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-            <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu" id="cart_items">
+    <a class="github-fork-ribbon" href="https://github.com/kdreyeroren/pants" title="Fork me on GitHub" target="_blank">Fork me on GitHub</a>
 
-            <%= render "shared/cart_items" %>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Pants!</a>
+        </div>
 
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="badge" id="cart_count"><%= cart_count %></span>
+                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" id="cart_items">
+                <%= render "shared/cart_items" %>
+              </ul>
+            </li>
           </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
 
+    <% if flash[:notice].present? %>
+      <div class="alert alert-info"><%= flash[:notice] %></div>
+    <% end %>
+    <% if flash[:alert].present? %>
+      <div class="alert alert-danger"><%= flash[:alert] %></div>
+    <% end %>
 
+    <div class="container"><%= yield %></div>
 
-<div class="container"><%= yield %></div>
+    <footer>
+      <hr>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+      <div class="container">
 
-</body>
+        <div class="row">
+          <div class="col-md-4">
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-muted">Twitter</a></li>
+              <li><a href="#" class="text-muted">LinkedIn</a></li>
+              <li><a href="#" class="text-muted">GitHub</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+          </div>
+
+          <div class="col-md-4">
+            <p class="text-right">&copy; Katya Dreyer-Oren, 2016</p>
+          </div>
+        </div>
+
+      </div>
+
+    </footer>
+
+  </body>
 </html>
