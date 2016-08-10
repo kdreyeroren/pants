@@ -79,10 +79,14 @@
 
   <hr>
 
+  <p class="text-muted">
+    (To test the Stripe functionality, use card number <code>4242 4242 4242 4242</code>, any 3-digit code, and any date in the future.)
+  </p>
   <p>
     You're about to pay:
     <strong><%= number_to_currency(@order.total) %></strong>
   </p>
+  
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
