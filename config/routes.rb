@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   # get '/user_products', to: 'user_products#index', as 'user_products'
 
   post 'add_to_cart', to: 'carts#add'
+
+  delete 'remove_from_cart', to: 'carts#remove'
     
 
   get 'checkout', to: 'checkouts#new'
